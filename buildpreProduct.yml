@@ -1,20 +1,22 @@
 version: 0.1
-env:
-  REACT_APP_API_URL: ""
+version: 0.2
+
 phases:
-  pre_build:
+  install:
     commands:
-      - echo Installing source NPM dependencies...
-      - npm Install
-      - cp .env.production .env.production.local
+      - echo "Installing dependencies..."
+      - npm install
   build:
     commands:
-      - echo Build started on 'date'
+      - echo "Building project..."
       - npm run build
+  test:
+    commands:
+      - echo "Running tests..."
+      - npm test
+
 artifacts:
   files:
     - '**/*'
-  base-directory: build
-cache:
-  paths:
-    - './node_modules/**/*'
+  base-directory: 'dist'
+
