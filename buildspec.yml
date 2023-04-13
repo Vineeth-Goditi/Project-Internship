@@ -15,7 +15,7 @@ phases:
         commands:
             - echo "we are in the build block"
             - echo "we will run some tests"
-            - yarn build
+            - yarn run build
     post_build:
         commands:
             - echo "we are in the post build phase"
